@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Love 💌</title>
+<style>
+body {
+    background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    font-family: 'Georgia', serif;
+    text-align: center;
+    padding: 50px;
+    color: #4a2c2a;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.intro {
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.envelope {
+    background: white;
+    border-radius: 12px;
+    padding: 15px 25px;
+    margin: 15px;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.envelope:hover {
+    transform: scale(1.08);
+}
+
+.message {
+    display: none;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.footer {
+    margin-top: 50px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+</style>
+
+<script>
+function toggleMessage(id) {
+    var msg = document.getElementById(id);
+    if (msg.style.display === "block") {
+        msg.style.display = "none";
+    } else {
+        msg.style.display = "block";
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>For You ❤️</h1>
+
+<p class="intro">
+Before you open any of these, know this —
+I didn’t type these words because typed words feel distant.
+But until I can handwrite them for you,
+let this be something you can revisit anytime you need me.
+</p>
+
+<div class="envelope" onclick="toggleMessage('m1')">
+💭 Open When You Miss Me
+<div class="message" id="m1">
+If you're reading this, it means you're missing me…
+Close your eyes.
+Imagine my arms around you.
+Distance is just space. It will never be stronger than us.
+</div>
+</div>
+
+<div class="envelope" onclick="toggleMessage('m2')">
+🌙 Open When You Can’t Sleep
+<div class="message" id="m2">
+I wish I was there to kiss your forehead.
+Until then, imagine me whispering,
+“You’re safe. You’re loved. I’m not going anywhere.”
+Sleep peacefully.
+</div>
+</div>
+
+<div class="envelope" onclick="toggleMessage('m3')">
+💖 Open When You Doubt My Love
+<div class="message" id="m3">
+I choose you.
+Not once.
+Not twice.
+But every single day.
+My love for you is intentional.
+</div>
+</div>
+
+<div class="envelope" onclick="toggleMessage('m4')">
+😢 Open When You’re Sad
+<div class="message" id="m4">
+Whatever you're facing,
+you’re not facing it alone.
+I believe in you more than you know.
+</div>
+</div>
+
+<div class="envelope" onclick="toggleMessage('m5')">
+💋 Open When You Want a Kiss
+<div class="message" id="m5">
+Lean closer to the screen…
+Pretend I just kissed you slowly.
+That smile? That’s mine.
+</div>
+</div>
+
+<div class="envelope" onclick="toggleMessage('m6')">
+🌍 Open When You Think About Our Future
+<div class="message" id="m6">
+One day we won’t say goodnight through a screen.
+One day I’ll turn over and you’ll be right there.
+And I’ll remember how we survived the distance.
+</div>
+</div>
+<div class="envelope" onclick="toggleMessage('m7')">
+♾ Open Anytime
+<div class="message" id="m7">
+No matter what mood you're in,
+no matter what day this is,
+remember this one simple truth:
+You are loved deeply.
+By me.
+Always.
+</div>
+</div>
+
+
+<div class="footer">
+Made with love ❤️
+</div>
+
+</body>
+</html>

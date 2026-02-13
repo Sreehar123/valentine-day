@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Valentine’s Day ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+<style>
+/* CANDLE CONTAINER */
+.candles{
+    position:fixed;
+    bottom:40px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:space-between;
+    padding:0 120px;
+    pointer-events:none;
+}
+
+/* CANDLE BODY */
+.candle{
+    width:40px;
+    height:120px;
+    background:linear-gradient(to bottom,#fff,#f3e5ab);
+    border-radius:10px;
+    position:relative;
+    box-shadow:0 0 20px rgba(255,200,120,0.4);
+}
+
+/* FLAME */
+.flame{
+    position:absolute;
+    top:-35px;
+    left:50%;
+    transform:translateX(-50%);
+    width:20px;
+    height:35px;
+    background:radial-gradient(ellipse at center,
+                #fff 0%,
+                #ffd700 40%,
+                #ff8c00 70%,
+                #ff4500 100%);
+    border-radius:50% 50% 50% 50%;
+    animation:flickerFlame 0.15s infinite alternate;
+    box-shadow:0 0 25px 8px rgba(255,150,50,0.7);
+}
+
+/* REALISTIC FLICKER */
+@keyframes flickerFlame{
+    0%{
+        transform:translateX(-50%) scale(1);
+        opacity:0.9;
+    }
+    50%{
+        transform:translateX(-48%) scale(1.05);
+    }
+    100%{
+        transform:translateX(-52%) scale(0.95);
+        opacity:1;
+    }
+}
+
+body{
+    margin:0;
+    background:linear-gradient(to right,#ffdde1,#ee9ca7);
+    font-family:'Dancing Script',cursive;
+    overflow-x:hidden;
+}
+
+/* RANDOM PETALS */
+.petal{
+    position:fixed;
+    top:-50px;
+    font-size:24px;
+    animation:fall linear forwards;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* UNFOLD PAPER ANIMATION */
+.wrapper{
+    display:flex;
+    justify-content:center;
+    padding:80px 20px;
+    perspective:2000px;
+}
+
+.letter{
+    background:#fdf6e3;
+    width:720px;
+    padding:70px;
+    color:#5a3e36;
+    line-height:1.9;
+    box-shadow:0 20px 60px rgba(0,0,0,0.3);
+    transform-origin:top;
+    transform:scaleY(0);
+    animation:unfold 2s ease forwards;
+    position:relative;
+}
+
+@keyframes unfold{
+    to{ transform:scaleY(1); }
+}
+
+/* candle glow */
+.letter:after{
+    content:'';
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:radial-gradient(circle at 20% 20%,rgba(255,200,150,0.15),transparent 40%);
+    animation:flicker 3s infinite alternate;
+}
+
+@keyframes flicker{
+    0%{opacity:.8}
+    100%{opacity:1}
+}
+
+/* HEADER HEARTBEAT */
+h1{
+    text-align:center;
+    font-size:50px;
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    25%{transform:scale(1.05)}
+    40%{transform:scale(1)}
+    60%{transform:scale(1.05)}
+}
+
+p{ font-size:24px; }
+
+.signature{ margin-top:40px; font-size:26px; }
+
+/* PAGE FLIP EFFECT */
+.flip-container{
+    margin-top:50px;
+    text-align:center;
+}
+
+button{
+    padding:15px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:#d98c8c;
+    color:white;
+    cursor:pointer;
+    font-family:'Dancing Script',cursive;
+}
+
+button:hover{
+    background:#c76b6b;
+}
+
+.flip{
+    animation:pageFlip 1s forwards;
+}
+
+@keyframes pageFlip{
+    0%{transform:rotateY(0)}
+    100%{transform:rotateY(-90deg); opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 BACKGROUND MUSIC (PUT YOUR FILE NAME HERE) -->
+<audio id="bgMusic" autoplay loop>
+    <source src="romantic.mp3" type="audio/mpeg">
+</audio>
+<!-- 🔥 CANDLES -->
+<div class="candles">
+  <div class="candle">
+    <div class="flame"></div>
+  </div>
+
+  <div class="candle">
+    <div class="flame"></div>
+  </div>
+</div>
+
+<div class="wrapper">
+<div class="letter" id="letter">
+
+<h1>Happy Valentine’s Day ❤️</h1>
+
+<p>My Love,</p>
+
+<p>Before you open any of these little envelopes, I want you to read this first.</p>
+
+<p>Inside each one, I left a piece of my heart for you — for different days, different moods, different moments when you might need me.</p>
+
+<p>I know I can’t always be there to hold you, to kiss your forehead, or to sit beside you in silence. But I wanted to create something you could touch when you miss me… something that feels real.</p>
+
+<p>I didn’t type these words because typed words feel distant.
+I wanted you to see the way my hand moves when I write your name.</p>
+
+<p>Every envelope holds a small reminder — that you are loved, chosen, and thought about more than you realize.</p>
+
+<p>If you’re happy, open one.<br>
+If you’re sad, open one.<br>
+If you can’t sleep or if you just need to feel close to me — open one.</p>
+
+<p>And when you do, imagine me right there with you.</p>
+
+<p>These aren’t just notes. They’re little pieces of us.</p>
+
+<p>Until I can be in your arms again, let these words hold you for me.</p>
+
+<p class="signature">Always yours,<br><b>[Your Name]</b></p>
+
+<div class="flip-container">
+<button onclick="flipPage()">Open the Envelopes 💌</button>
+</div>
+
+</div>
+</div>
+
+<script>
+
+/* RANDOM PETALS GENERATOR */
+function createPetal(){
+    const petal=document.createElement("div");
+    petal.classList.add("petal");
+    petal.innerHTML="🌹";
+    petal.style.left=Math.random()*100+"vw";
+    petal.style.animationDuration=(5+Math.random()*5)+"s";
+    petal.style.fontSize=(20+Math.random()*20)+"px";
+    document.body.appendChild(petal);
+
+    setTimeout(()=>{ petal.remove(); },10000);
+}
+
+setInterval(createPetal,500);
+
+
+/* PAGE FLIP */
+function flipPage(){
+    const letter=document.getElementById("letter");
+    letter.classList.add("flip");
+    setTimeout(()=>{
+        window.location.href="love.html";
+    },1000);
+}const music = document.getElementById("bgMusic");
+
+function startMusic() {
+    music.play();
+    document.removeEventListener("click", startMusic);
+}
+
+document.addEventListener("click", startMusic);
+
+
+</script>
+
+</body>
+</html>
